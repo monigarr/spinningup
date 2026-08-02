@@ -145,7 +145,7 @@ class EpochLogger(Logger):
             if key not in self.epoch_dict:
                 raise KeyError(f"No stored values for key: {key}")
             vals = self.epoch_dict[key]
-            vals = np.concatenate(vals) if isinstance(vals[0], np.ndarray) else vals
+            vals = np.concatenate(vals) if isinstance(vals[0], np.ndarray) and len(vals[0].shape) > 0 else vals
             stats = mpi_statistics_scalar(vals, with_min_and_max)
             super().log_tabular(key if average_only else f"Average{key}", stats[0])
             if not average_only:
@@ -159,5 +159,5 @@ class EpochLogger(Logger):
         if key not in self.epoch_dict:
             raise KeyError(f"No stats available for key: {key}")
         vals = self.epoch_dict[key]
-        vals = np.concatenate(vals) if isinstance(vals[0], np.ndarray) else vals
+        vals = np.concatenate(vals) if isinstance(vals[0], np.ndarray) and len(vals[0].shape) > 0 else vals
         return mpi_statistic
