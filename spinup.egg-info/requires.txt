@@ -3,7 +3,6 @@ gymnasium[atari,box2d,classic_control]
 ipython
 joblib
 matplotlib
-mpi4py
 numpy
 pandas
 pytest

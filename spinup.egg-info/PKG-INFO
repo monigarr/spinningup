@@ -9,7 +9,6 @@ Requires-Dist: gymnasium[atari,box2d,classic_control]
 Requires-Dist: ipython
 Requires-Dist: joblib
 Requires-Dist: matplotlib
-Requires-Dist: mpi4py
 Requires-Dist: numpy
 Requires-Dist: pandas
 Requires-Dist: pytest
