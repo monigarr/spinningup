@@ -43,7 +43,7 @@ conda activate spinningup-py38
 
 ### 3. Install Core Dependencies (Conda First)
 ```bash
-conda install -c conda-forge swig msmpi
+conda install -c conda-forge mpi4py openmpi swig -y
 ```
 
 ### 4. Install Python Packages
